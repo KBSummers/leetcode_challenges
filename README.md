@@ -1,1 +1,2 @@
 # Leetcode Challenge Solutions
+This repository's purpose is to provide a cohesive area where one can find solutions to fundamental computer science problems provided by [Leetcode](https://www.leetcode.com). The first additions will all be solutions to [Leetcode 75 problems](https://www.leetcode.com/study-plan/leetcode-75/) and will be done in Python. Hopefully more problems and more languages will come to follow... :)
