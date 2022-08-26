@@ -1,5 +1,11 @@
-#! usr/bin/env python
+#! usr/bin/env python3
+"""
+You are given the heads of two sorted linked lists list1 and list2.
 
+Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.
+
+Return the head of the merged linked list.
+"""
 class Solution:
 
     # Using recursion
@@ -7,20 +13,20 @@ class Solution:
         if a and b:
             if a.val < b.val:
                 a, b = b, a
-            a.next = mergeTwoLists(a.next, b)
+            a.next = self.mergeTwoLists(a.next, b)
         return a or b
 
     # iteratively
     def mergeTwoLists(self, a, b):
         cur = dummy = ListNode()
-        while list1 and list2:
-            if list1.val < list2.val:
-                curr.next = list1
-                list1, curr = list1.next, list1
+        while a and b:
+            if a.val < b.val:
+                curr.next = a
+                a, curr = a.next, a
             else:
-                cur.next = list2
-                list2, curr = list2.next, list2
+                cur.next = b
+                b, curr = b.next, b
 
-        if list1 or list2:
-            cur.next = list1 if list1 else list2
+        if a or b:
+            cur.next = a if a else b
         return dummy.next
