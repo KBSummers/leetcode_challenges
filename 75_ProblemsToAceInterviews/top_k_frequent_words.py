@@ -20,3 +20,4 @@ class Solution(object):
             else:
                 dict[x] = 1
         res = sorted(dict, key=lambda x: (-dict[x], x))
+        return res[:k]

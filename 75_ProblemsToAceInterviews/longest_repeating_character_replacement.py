@@ -13,3 +13,20 @@ class Solution:
         :type k: int
         :rtype: int
         """
+        l = 0
+        cfreq = {}
+        maxStringLen = 0
+        for r in range(len(s)):
+            if not s[r] in cfreq:
+                cfreq[s[r]] = 0
+            cfreq[s[r]] += 1
+
+            cellCount = r - l + 1
+            if cellCount - max(cfreq.values()) <= k:
+                maxStringLen = max(maxStringLen, cellCount)
+            else:
+                cfreq[s[l]] -= 1
+                if not cfreq[s[l]]:
+                    cfreq.pop(s[l])
+                l += 1
+        return maxStringLen
